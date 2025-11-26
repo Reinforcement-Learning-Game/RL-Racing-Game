@@ -1,7 +1,10 @@
 extends Node
 class_name Player
 
-@export var vehicle = Vehicle.new()
+var vehicle
+
+func _ready():
+    vehicle = Vehicle.new()
 
 func _process(delta: float):
     vehicle.reset_data(delta)
@@ -14,3 +17,6 @@ func _process(delta: float):
         pass # do this
     elif (Input.is_action_just_pressed("Brake")):
         pass # do this
+
+func _get_vehicle():
+    return vehicle
