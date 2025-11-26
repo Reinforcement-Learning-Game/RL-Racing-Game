@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5polwo21b27k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xcuoc"]
+size = Vector3(0.49954224, 0.22506714, 1)
+
+[node name="Vehicle" type="VehicleBody3D"]
+
+[node name="front_right_tire" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0.326)
+use_as_steering = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="front_right_tire"]
+transform = Transform3D(-1.0490733e-08, 0.24, 0, -0.24, -1.0490733e-08, 0, 0, 0, 0.24, 0.02758789, -1.205905e-09, 0)
+height = 0.23
+
+[node name="front_left_tire" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0.326)
+use_as_steering = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="front_left_tire"]
+transform = Transform3D(-1.0490733e-08, 0.24, 0, -0.24, -1.0490733e-08, 0, 0, 0, 0.24, 0.02758789, -1.205905e-09, 0)
+height = 0.23
+
+[node name="back_right_tire" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, -0.377)
+use_as_traction = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="back_right_tire"]
+transform = Transform3D(-1.0490733e-08, 0.24, 0, -0.24, -1.0490733e-08, 0, 0, 0, 0.24, 0.02758789, -1.205905e-09, 0)
+height = 0.23
+
+[node name="back_left_tire" type="VehicleWheel3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, -0.377)
+use_as_traction = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="back_left_tire"]
+transform = Transform3D(-1.0490733e-08, 0.24, 0, -0.24, -1.0490733e-08, 0, 0, 0, 0.24, 0.02758789, -1.205905e-09, 0)
+height = 0.23
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.043029785, 0)
+size = Vector3(0.5, 0.25, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02708435, 0)
+shape = SubResource("BoxShape3D_xcuoc")

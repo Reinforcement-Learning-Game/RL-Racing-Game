@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmikf4j70nflp"]
+
+[ext_resource type="Script" path="res://csg_box_3d.gd" id="1_g4hdf"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -281.69702, -2.3841858e-07, -0.5714593)
+size = Vector3(570.6106, 1, 6.854187)
+script = ExtResource("1_g4hdf")
