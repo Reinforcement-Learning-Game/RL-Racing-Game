@@ -22,6 +22,12 @@ func accelerate():
 func steer(angle: float):
 	steering = max(steering + angle, sign(angle) * MAX_STEERING)
 
+func steer_left(angle: float):
+	steer(-PI/12)
+
+func steer_right(angle: float):
+	steer(PI/12)
+
 func apply_brake(force: float):
 	brake = force 
 
@@ -29,5 +35,3 @@ func reset_data(delta): # needed if player stops control
 	engine_force = 0
 	steering = lerp(steering, 0.0, 10.0 * delta) # slowly resets steering
 	brake = 0
-
-
