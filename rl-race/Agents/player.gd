@@ -3,13 +3,14 @@ class_name Player # Gives the script a global name in godot
 
 var vehicle: Node # Creates a variable named vehicle
 
-func _ready():
+func new():
 	# Loading the vehicle scene
 	var vehicle_scene := load("res://Vehicle/Vehicle.tscn")
 	vehicle = vehicle_scene.instantiate() # Creating an actual instance of the vehicle scene
 	#Will create all of it's nodes
 	# Runs the _init function
 	# Prepares it to enter the scene
+	print("here")
 	# Vehicle is now a REAL NODE
 	add_child(vehicle)
 	# Will add the vehicle node as a child of the player node

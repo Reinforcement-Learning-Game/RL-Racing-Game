@@ -3,6 +3,7 @@ class_name Vehicle
 
 @export var ENGINE_FORCE = 30.0 # proportional to acceleration
 @export var BRAKE_FORCE = 30.0
+@export var STEER_AMOUNT = PI/12
 
 @export var MASS = 900.0
 @export var MAX_VELOCITY = 60
@@ -22,11 +23,11 @@ func accelerate():
 func steer(angle: float):
 	steering = max(steering + angle, sign(angle) * MAX_STEERING)
 
-func steer_left(angle: float):
-	steer(-PI/12)
+func steer_left():
+	steer(-STEER_AMOUNT)
 
-func steer_right(angle: float):
-	steer(PI/12)
+func steer_right():
+	steer(STEER_AMOUNT)
 
 func apply_brake(force: float):
 	brake = force 
