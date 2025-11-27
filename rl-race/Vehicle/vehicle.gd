@@ -1,16 +1,16 @@
 extends VehicleBody3D
 class_name Vehicle
 
-@export var ENGINE_FORCE = 30.0 # proportional to acceleration
-@export var BRAKE_FORCE = 30.0
-@export var STEER_AMOUNT = PI/12
+@export var ENGINE_FORCE = 2600.0 # proportional to acceleration
+@export var BRAKE_FORCE = 270.0
+@export var STEER_AMOUNT = PI/128
 
-@export var MASS = 900.0
+@export var MASS = 600.0 # 900.0
 @export var MAX_VELOCITY = 60
-@export var MAX_STEERING = PI/3 # in radians
+@export var MAX_STEERING = PI/6 # in radians
 
 func _ready() -> void:
-	pass # Replace with function body.
+	mass = MASS
 
 func accelerate():
 	# might not be needed if friction-force increases as velocity does
@@ -21,16 +21,20 @@ func accelerate():
 	engine_force = ENGINE_FORCE
 
 func steer(angle: float):
-	steering = max(steering + angle, sign(angle) * MAX_STEERING)
+	if (abs(steering + angle) <= MAX_STEERING):
+		steering += angle
+	else:
+		steering = sign(angle) * MAX_STEERING
+
 
 func steer_left():
-	steer(-STEER_AMOUNT)
-
-func steer_right():
 	steer(STEER_AMOUNT)
 
+func steer_right():
+	steer(-STEER_AMOUNT)
+
 func apply_brake():
-	brake = BRAKE_FORCE 
+	brake = BRAKE_FORCE
 
 func reset_data(delta): # needed if player stops control
 	engine_force = 0

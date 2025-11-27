@@ -25,13 +25,13 @@ func _physics_process(delta: float):
 		return #Safety check
 	vehicle.reset_data(delta) # Calls all of the methods on the vehicle (steering, acceleration, rotatione etc)
 	# Input handling
-	if (Input.is_action_just_pressed("Accelerate")):
+	if (Input.is_action_pressed("Accelerate")):
 		vehicle.accelerate()
-	elif (Input.is_action_just_pressed("Left")): 
+	if (Input.is_action_pressed("Left")): 
 		vehicle.steer_left()
-	elif (Input.is_action_just_pressed("Right")):
+	if (Input.is_action_pressed("Right")):
 		vehicle.steer_right()
-	elif (Input.is_action_just_pressed("Brake")):
+	if (Input.is_action_pressed("Brake")):
 		vehicle.apply_brake()
 
 func get_vehicle():
