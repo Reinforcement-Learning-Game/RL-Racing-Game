@@ -1,9 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5polwo21b27k"]
+[gd_scene load_steps=3 format=3 uid="uid://c5polwo21b27k"]
+
+[ext_resource type="Script" uid="uid://crfxxmwsmgiag" path="res://Vehicle/vehicle.gd" id="1_25uyk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xcuoc"]
 size = Vector3(0.49954224, 0.22506714, 1)
 
 [node name="Vehicle" type="VehicleBody3D"]
+script = ExtResource("1_25uyk")
 
 [node name="front_right_tire" type="VehicleWheel3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0.326)

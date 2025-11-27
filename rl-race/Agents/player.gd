@@ -3,8 +3,11 @@ class_name Player
 
 var vehicle
 
-func _ready():
-    vehicle = Vehicle.new()
+func new():
+    # use SceneManager singleton to load vehicle and add it as child of player
+    #vehicle =
+    # do research on loading Scenes to figure out how to do this
+    pass
 
 func _process(delta: float):
     vehicle.reset_data(delta)
@@ -18,5 +21,5 @@ func _process(delta: float):
     elif (Input.is_action_just_pressed("Brake")):
         pass # do this
 
-func _get_vehicle():
+func get_vehicle():
     return vehicle

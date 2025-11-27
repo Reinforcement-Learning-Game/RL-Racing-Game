@@ -11,7 +11,6 @@ class_name Vehicle
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 func accelerate():
 	# might not be needed if friction-force increases as velocity does
 	if (linear_velocity >= MAX_VELOCITY):

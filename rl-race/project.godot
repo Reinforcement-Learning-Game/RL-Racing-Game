@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="RL Race"
+run/main_scene="uid://dmikf4j70nflp"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://game_manager.gd"
 
 [input]
 
