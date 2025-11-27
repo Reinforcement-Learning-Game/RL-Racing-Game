@@ -1,7 +1,29 @@
-[gd_scene format=3 uid="uid://dmikf4j70nflp"]
+[gd_scene load_steps=2 format=3 uid="uid://dmikf4j70nflp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7u12j"]
+size = Vector3(570.928, 1.292, 14)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -281.69702, -2.3841858e-07, -0.5714593)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.0261812, -281.69702, -5.457363, -0.5714593)
 size = Vector3(570.6106, 1, 6.854187)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.005740775, -0.29898572, 0.9542403, -0.018318975, 0.9540645, 0.29904082, -0.9998157, -0.01919743, -4.247392e-08, 5.97894, 1.0509181, -0.56426823)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.4673023, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -281.94962, -0.14624023, -0.5675049)
+shape = SubResource("BoxShape3D_7u12j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.11713212, -0.62014884, 0.7756905, -0.092595026, 0.7844842, 0.6131971, -0.9887904, 0, -0.149311, 0, 5.020524, 13.480082)
+light_color = Color(0.9914184, 0.94024223, 0.81242824, 1)
+light_energy = 2.143
+light_indirect_energy = 3.286
+light_volumetric_fog_energy = 4.727
+shadow_enabled = true
+shadow_opacity = 0.55

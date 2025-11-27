@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func accelerate():
 	# might not be needed if friction-force increases as velocity does
-	if (linear_velocity >= MAX_VELOCITY):
+	if (linear_velocity.length() >= MAX_VELOCITY):
 		engine_force = 0
 		return
 
@@ -29,10 +29,15 @@ func steer_left():
 func steer_right():
 	steer(STEER_AMOUNT)
 
-func apply_brake(force: float):
-	brake = force 
+func apply_brake():
+	brake = BRAKE_FORCE 
 
 func reset_data(delta): # needed if player stops control
 	engine_force = 0
 	steering = lerp(steering, 0.0, 10.0 * delta) # slowly resets steering
 	brake = 0
+
+func _process(_delta: float):
+	print("Acceleration:", engine_force)
+	print("Steering:", steering)
+	print("Braking:", brake)
