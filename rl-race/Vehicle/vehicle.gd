@@ -42,6 +42,7 @@ func reset_data(delta): # needed if player stops control
 	brake = 0
 
 func _process(_delta: float):
-	print("Acceleration:", engine_force)
-	print("Steering:", steering)
-	print("Braking:", brake)
+	#print("Acceleration:", engine_force)
+	#print("Steering:", steering)
+	#print("Braking:", brake)
+	pass
