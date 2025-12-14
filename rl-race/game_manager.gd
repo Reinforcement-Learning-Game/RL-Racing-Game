@@ -1,7 +1,5 @@
 extends Node
 
-var agents = []
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var track = get_tree().current_scene

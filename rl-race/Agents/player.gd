@@ -5,9 +5,8 @@ var vehicle: Node # Creates a variable named vehicle
 
 func _init():
 	# Loading the vehicle scene
-	#var vehicle_scene := load("res://Vehicle/Vehicle.tscn")
-	#vehicle = vehicle_scene.instantiate() # Creating an actual instance of the vehicle scene
-	vehicle = Vehicle.new()
+	var vehicle_scene := load("res://Vehicle/Vehicle.tscn")
+	vehicle = vehicle_scene.instantiate() # Creating an actual instance of the vehicle scene
 	#Will create all of it's nodes
 	# Runs the _init function
 	# Prepares it to enter the scene

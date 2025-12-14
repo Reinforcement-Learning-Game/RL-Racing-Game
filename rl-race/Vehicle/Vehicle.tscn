@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://crfxxmwsmgiag" path="res://Vehicle/vehicle.gd" id="1_25uyk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xcuoc"]
-size = Vector3(0.62397003, 0.3545208, 1)
+size = Vector3(0.49954224, 0.34083462, 1)
 
 [node name="Vehicle" type="VehicleBody3D"]
 script = ExtResource("1_25uyk")
@@ -41,9 +41,9 @@ transform = Transform3D(-1.0490733e-08, 0.24, 0, -0.24, -1.0490733e-08, 0, 0, 0,
 height = 0.23
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1.2476753, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04425049, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04425049, 0)
 size = Vector3(0.5, 0.2475586, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00063705444, -0.03764248, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.030799389, 0)
 shape = SubResource("BoxShape3D_xcuoc")
