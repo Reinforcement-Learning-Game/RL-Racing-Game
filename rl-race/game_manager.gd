@@ -11,3 +11,5 @@ func _ready() -> void:
 	print(player)
 	print(player.get_parent())
 	print(player.get_vehicle())
+
+	player.get_vehicle().position = Vector3(0, 0, 0);

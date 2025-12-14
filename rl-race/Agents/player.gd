@@ -1,7 +1,7 @@
 extends Node # This script is attached to a node
 class_name Player # Gives the script a global name in godot
 
-var vehicle: Node # Creates a variable named vehicle
+var vehicle: VehicleBody3D # Creates a variable named vehicle
 
 func _init():
 	# Loading the vehicle scene
