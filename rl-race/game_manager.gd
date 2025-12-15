@@ -12,4 +12,4 @@ func _ready() -> void:
 	print(player.get_parent())
 	print(player.get_vehicle())
 
-	player.get_vehicle().position = Vector3(0, 0, 0);
+	player.get_vehicle().position = Vector3(9.491, 5.574, -0.503);

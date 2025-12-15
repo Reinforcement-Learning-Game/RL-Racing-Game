@@ -1,19 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmikf4j70nflp"]
+[gd_scene load_steps=3 format=3 uid="uid://dmikf4j70nflp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7u12j"]
 size = Vector3(570.928, 1.292, 14)
+
+[sub_resource type="Curve3D" id="Curve3D_7u12j"]
+closed = true
+bake_interval = 0.02
+_data = {
+"points": PackedVector3Array(10, 0, 0, -10, 0, 0, 3.7268648, 1.4895134, -17.55167, 20, 0, 0, -40, 0, 0, -80, 0, -31.464012, 30, 0, 0, 0, 0, 0, -120, 0, 30, 0, 0, 0, -20, 0, 0, -200, 1.4895134, 22.979824, -20, 0, 0, 10, 0, 0, -200, 3.910099, -23.181244, 0, 0, 0, 30, 0, 0, -120, 12, -30, -35, 0, 0, 40, 0, 0, -80, 12, 30, 0, 0, 0, 0, 0, 0, 5.206216, 1.3147831, 17.686731),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
 
 [node name="Node3D" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.0261812, -281.69702, -5.457363, -0.5714593)
+visible = false
 size = Vector3(570.6106, 1, 6.854187)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.005740775, -0.29898572, 0.9542403, -0.018318975, 0.9540645, 0.29904082, -0.9998157, -0.01919743, -4.247392e-08, 5.97894, 1.0509181, -0.56426823)
+transform = Transform3D(-1, -8.742278e-08, -3.821371e-15, 0, -4.371139e-08, 1, -8.742278e-08, 1, 4.371139e-08, -104.46486, 86.54204, 10.451828)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.4673023, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -281.94962, -0.14624023, -0.5675049)
@@ -27,3 +38,24 @@ light_indirect_energy = 3.286
 light_volumetric_fog_energy = 4.727
 shadow_enabled = true
 shadow_opacity = 0.55
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_7u12j")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 7.5, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 1
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 0.0
+path_joined = true
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4906435, 5.5737495, -0.50287175)

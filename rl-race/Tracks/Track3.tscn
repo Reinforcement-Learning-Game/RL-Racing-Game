@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://bon860uwfnyov"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7u12j"]
+size = Vector3(570.928, 1.292, 14)
+
+[sub_resource type="Curve3D" id="Curve3D_s3336"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 26.83994, 0, 0, 0, 0, 0, 0, 0, 0, 48.904625, 0.017532349, -5.3747716, 0, 0, 0, 0, 0, 0, 63.325302, 0.028923035, -16.268255, 0, 0, 0, 0, 0, 0, 70.25684, 0.034362793, -26.261703, 0, 0, 0, 0, 0, 0, 71.859276, 0.035568237, -35.616905, 0, 0, 0, 0, 0, 0, 76.55875, 0.03451538, -43.50126, 0, 0, 0, 0, 0, 0, 64.70012, 0.029724121, -56.552998, 0, 0, 0, 0, 0, 0, 49.406662, 0.017471313, -62.006927, 0, 0, 0, 0, 0, 0, 35.268448, 0.0065994263, -64.82237, 0, 0, 0, 0, 0, 0, 14.135027, -0.010543823, -53.00464, 0, 0, 0, 0, 0, 0, 4.1822853, -0.018478394, -52.877777, 0, 0, 0, 0, 0, 0, -1.4579124, -0.023002625, -55.714165, 0, 0, 0, 0, 0, 0, -7.249054, -0.027610779, -55.19643, 0, 0, 0, 0, 0, 0, -9.368141, -0.029273987, -51.747276, 0, 0, 0, 0, 0, 0, -7.680031, -0.027900696, -47.216694, 0, 0, 0, 0, 0, 0, -4.2685547, -0.025146484, -41.510864, 0, 0, 0, 0, 0, 0, 0.318161, -0.021469116, -37.528404, 0, 0, 0, 0, 0, 0, 1.0587883, -0.020828247, -30.924913, 0, 0, 0, 0, 0, 0, -1.9249115, -0.023139954, -22.277702, 0, 0, 0, 0, 0, 0, -7.298233, -0.027389526, -17.474155, 0, 0, 0, 0, 0, 0, -11.633881, -0.030792236, -12.312566, 0, 0, 0, 0, 0, 0, -17.34214, -0.035308838, -8.669683, 0, 0, 0, 0, 0, 0, -17.358202, -0.03526306, -2.2157803, 0, 0, 0, 0, 0, 0, -12.167158, -0.031105042, 0.18607903, 0, 0, 0, 0, 0, 0, -5.4234076, -0.025726318, 1.2727172),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 26
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.0261812, -281.69702, -5.457363, -0.5714593)
+visible = false
+size = Vector3(570.6106, 1, 6.854187)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -8.742278e-08, -3.821371e-15, 0, -4.371139e-08, 1, -8.742278e-08, 1, 4.371139e-08, -104.46486, 86.54204, 10.451828)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.4673023, 0)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -281.94962, -0.14624023, -0.5675049)
+shape = SubResource("BoxShape3D_7u12j")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.11713212, -0.62014884, 0.7756905, -0.092595026, 0.7844842, 0.6131971, -0.9887904, 0, -0.149311, 0, 5.020524, 13.480082)
+light_color = Color(0.9914184, 0.94024223, 0.81242824, 1)
+light_energy = 2.143
+light_indirect_energy = 3.286
+light_volumetric_fog_energy = 4.727
+shadow_enabled = true
+shadow_opacity = 0.55
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4906435, 5.5737495, -0.50287175)
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_s3336")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
+use_collision = true
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 6, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
