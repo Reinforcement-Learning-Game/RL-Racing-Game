@@ -1,0 +1,54 @@
+extends Node
+class_name PlayerController
+
+var vehicle: VehicleBody3D
+@onready var camera_pivot: Node3D = $CameraPivot
+@onready var camera: Camera3D = $CameraPivot/Camera3D
+
+@export var follow_speed := 5.0
+@export var rotation_speed := 5.0
+
+func _ready():
+	var vehicle_scene := load("res://Vehicle/Vehicle.tscn")
+	vehicle = vehicle_scene.instantiate()
+	add_child(vehicle)
+
+	# Optional: start camera at vehicle position
+	camera_pivot.global_position = vehicle.global_position
+
+func _physics_process(delta: float):
+	if vehicle == null:
+		return
+
+	vehicle.reset_data(delta)
+
+	if Input.is_action_pressed("Accelerate"):
+		vehicle.accelerate()
+	if Input.is_action_pressed("Left"):
+		vehicle.steer_left()
+	if Input.is_action_pressed("Right"):
+		vehicle.steer_right()
+	if Input.is_action_pressed("Brake"):
+		vehicle.apply_brake()
+
+func _process(delta):
+	if vehicle == null:
+		return
+
+	# Smooth position follow
+	camera_pivot.global_position = camera_pivot.global_position.lerp(
+		vehicle.global_position,
+		follow_speed * delta
+	)
+
+	# Smooth rotation follow (Y axis only)
+	var target_rot := camera_pivot.global_rotation
+	target_rot.y = lerp_angle(
+		camera_pivot.global_rotation.y,
+		vehicle.global_rotation.y,
+		rotation_speed * delta
+	)
+	camera_pivot.global_rotation = target_rot
+
+func get_vehicle():
+	return vehicle
