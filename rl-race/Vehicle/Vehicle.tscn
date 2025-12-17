@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://crfxxmwsmgiag" path="res://Vehicle/vehicle.gd" id="1_25uyk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xcuoc"]
-size = Vector3(0.49954224, 0.34083462, 1)
+size = Vector3(0.49954224, 0.32251334, 1)
 
 [node name="Vehicle" type="VehicleBody3D"]
 script = ExtResource("1_25uyk")
 
 [node name="front_right_tire" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.07974446, 0.35200316)
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 0.3, -0.08, -0.3523598)
 use_as_steering = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="front_right_tire"]
@@ -17,7 +17,7 @@ transform = Transform3D(-1.0490733e-08, 0.24, 0, -0.24, -1.0490733e-08, 0, 0, 0,
 height = 0.23
 
 [node name="front_left_tire" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.07974446, 0.35200316)
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, -0.25, -0.08, -0.34435982)
 use_as_steering = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="front_left_tire"]
@@ -25,7 +25,7 @@ transform = Transform3D(-1.0490733e-08, 0.24, 0, -0.24, -1.0490733e-08, 0, 0, 0,
 height = 0.23
 
 [node name="back_right_tire" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.07974446, -0.35099685)
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, 0.3, -0.08, 0.3329053)
 use_as_traction = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="back_right_tire"]
@@ -33,7 +33,7 @@ transform = Transform3D(-1.0490733e-08, 0.24, 0, -0.24, -1.0490733e-08, 0, 0, 0,
 height = 0.23
 
 [node name="back_left_tire" type="VehicleWheel3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, -0.07974446, -0.35099685)
+transform = Transform3D(-0.99999994, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -0.99999994, -0.25, -0.08, 0.3409053)
 use_as_traction = true
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="back_left_tire"]
@@ -45,5 +45,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04425049, 0)
 size = Vector3(0.5, 0.2475586, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.030799389, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.021638751, 0)
 shape = SubResource("BoxShape3D_xcuoc")

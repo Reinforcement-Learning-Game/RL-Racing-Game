@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 	# Smooth position follow
 
 	camera_pivot.global_position = camera_pivot.global_position.lerp(
-		vehicle.global_position,
+		vehicle.to_global(Vector3(0, 1, 4)),
 		follow_speed * delta
 	)
 
@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 		vehicle.global_rotation.y,
 		rotation_speed * delta
 	)
+
 	camera_pivot.global_rotation = target_rot
 
 func _physics_process(delta: float):

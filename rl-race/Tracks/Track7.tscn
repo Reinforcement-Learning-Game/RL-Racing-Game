@@ -26,3 +26,12 @@ path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.11713212, -0.62014884, 0.7756905, -0.092595026, 0.7844842, 0.6131971, -0.9887904, 0, -0.149311, 0, 5.020524, 13.480082)
+light_color = Color(0.9914184, 0.94024223, 0.81242824, 1)
+light_energy = 2.143
+light_indirect_energy = 3.286
+light_volumetric_fog_energy = 4.727
+shadow_enabled = true
+shadow_opacity = 0.55
