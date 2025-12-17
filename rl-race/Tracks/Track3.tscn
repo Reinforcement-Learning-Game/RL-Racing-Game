@@ -1,7 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bon860uwfnyov"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7u12j"]
-size = Vector3(570.928, 1.292, 14)
+[gd_scene load_steps=2 format=3 uid="uid://bon860uwfnyov"]
 
 [sub_resource type="Curve3D" id="Curve3D_s3336"]
 closed = true
@@ -13,21 +10,8 @@ point_count = 26
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.0261812, -281.69702, -5.457363, -0.5714593)
-visible = false
-size = Vector3(570.6106, 1, 6.854187)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-1, -8.742278e-08, -3.821371e-15, 0, -4.371139e-08, 1, -8.742278e-08, 1, 4.371139e-08, -104.46486, 86.54204, 10.451828)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.4673023, 0)
-visible = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -281.94962, -0.14624023, -0.5675049)
-shape = SubResource("BoxShape3D_7u12j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.11713212, -0.62014884, 0.7756905, -0.092595026, 0.7844842, 0.6131971, -0.9887904, 0, -0.149311, 0, 5.020524, 13.480082)
@@ -46,7 +30,7 @@ curve = SubResource("Curve3D_s3336")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Path3D"]
 use_collision = true
-polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 6, 0)
+polygon = PackedVector2Array(0, 0, 0, 1, 3, 1, 3, 0)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0
