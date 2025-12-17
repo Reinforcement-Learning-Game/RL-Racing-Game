@@ -1,13 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://eaovr86hkhg2"]
+[gd_scene load_steps=2 format=3 uid="uid://c5fq3qaw5vj40"]
 
 [sub_resource type="Curve3D" id="Curve3D_jo7o3"]
 resource_local_to_scene = true
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, -20, 0, 0, 20, 30, 0, -15, -15, 0, 0, 15, 0, 0, 35, 0, 20, 25, 0, 0, -25, 0, 0, 0, 0, 30, 0, 0, 15, 0, 0, -15, -25, 0, 20, 10, 0, 15, -10, 0, -15, -30, 0, -10, 0, 0, 20, 0, 0, -20, -10, 0, -30),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, -20, 0, 0, 20, 30, 0, -15, 0, 0, 0, 0, 0, 0, 34.15899, 0, 16.819403, 15, 0, 0, -9.97, 0, 0, 21.544613, 0, 25.26597, 25, 0, 0, -24, 0, 0, 0, 0, 37.48059, 0, 0, 15, 0, 0, -15, -25, 0, 20, 10, 0, 15, -10, 0, -15, -27.72862, 0, 1.9487383, 0, 0, 20, 0, 0, -20, -10, 0, -30),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 6
+point_count = 7
 
 [node name="Node3D" type="Node3D"]
 
@@ -16,7 +16,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016727448, -0.019288778, 0.
 curve = SubResource("Curve3D_jo7o3")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
-polygon = PackedVector2Array(-1, 0, -1, 0.1, 1, 1, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049951553, -0.06472206, 0.04808426)
+polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 5, 0)
 mode = 2
 path_node = NodePath("../TrackPath")
 path_interval_type = 0

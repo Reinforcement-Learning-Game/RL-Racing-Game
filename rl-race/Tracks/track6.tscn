@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5k1hck6cqbjf"]
+[gd_scene load_steps=2 format=3 uid="uid://mxo0t1faruwr"]
 
 [sub_resource type="Curve3D" id="Curve3D_u74x3"]
 closed = true
@@ -14,7 +14,7 @@ point_count = 8
 curve = SubResource("Curve3D_u74x3")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Track"]
-polygon = PackedVector2Array(-1, 0, -1, 0.1, 1, 0.1, 1, 0)
+polygon = PackedVector2Array(-1, 0, -1, 0.1, 1, 0.1, 5, 0)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0

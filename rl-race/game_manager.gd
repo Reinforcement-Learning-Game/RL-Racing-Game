@@ -1,15 +1,52 @@
 extends Node
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+@export
+var track_names_to_paths = {
+	"Track One": "Track1",
+	"Track Two": "Track2",
+	"Track Three": "Track3",
+	"Track Four": "Track4",
+	"Track Five": "Track5",
+	"Track Six": "Track6"
+}
+
+enum GameState {
+	SETTING_UP,
+	IN_PROGRESS,
+	ENDED
+}
+var game_state = GameState.SETTING_UP
+var agents #: Agent[]
+var player: Player
+
+var parent_dir = "res://Tracks/"
+
+func set_track(track_name):
+	get_tree().change_scene_to_file(parent_dir + track_name + ".tscn")
+
+	# get all with group "agent"
+	# get all with group "vehicle_spawn"
+	# set each 
+
+func add_agents_to_track(num_agents: int, has_player: bool):
 	var track = get_tree().current_scene
 
-	var player: Node = Player.new()
+	for i in range(num_agents):
+		var agent = AiAgent.new()
+		track.add_child(agent)
 
-	track.add_child(player)
+	if has_player:
+		player = Player.new()
+		track.add_child(player)
 
-	print(player)
-	print(player.get_parent())
-	print(player.get_vehicle())
+	game_state = GameState.IN_PROGRESS
 
-	player.get_vehicle().position = Vector3(9.491, 5.574, -0.503);
+func start_game(track_name: String, num_agents: int, has_player: bool):
+	set_track(track_name)
+	await get_tree().create_timer(1).timeout
+	add_agents_to_track(num_agents, has_player)
+
+
+
+	
+		
