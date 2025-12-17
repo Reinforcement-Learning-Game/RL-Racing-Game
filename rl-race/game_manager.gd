@@ -49,6 +49,8 @@ func start_game(track_name: String, num_agents: int, has_player: bool):
 	await get_tree().create_timer(1).timeout
 	add_agents_to_track(num_agents, has_player)
 
+func increment_laps(player: Player):
+	pass
 
 
 	

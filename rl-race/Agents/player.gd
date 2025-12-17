@@ -1,7 +1,7 @@
 extends Node # This script is attached to a node
 class_name Player # Gives the script a global name in godot
 
-var vehicle: VehicleBody3D # Creates a variable named vehicle
+var vehicle: Vehicle # Creates a variable named vehicle
 var camera_pivot: Node3D
 var camera3d: Camera3D
 
@@ -16,6 +16,7 @@ func _init():
 	# Runs the _init function
 	# Prepares it to enter the scene
 	# Vehicle is now a REAL NODE
+	vehicle.player = self
 	add_child(vehicle)
 
 	camera_pivot = Node3D.new()

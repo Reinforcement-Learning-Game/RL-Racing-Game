@@ -9,6 +9,8 @@ class_name Vehicle
 @export var MAX_VELOCITY = 60
 @export var MAX_STEERING = PI/6 # in radians
 
+@export var player: Player
+
 func _ready() -> void:
 	mass = MASS
 
@@ -26,7 +28,6 @@ func steer(angle: float):
 	else:
 		steering = sign(angle) * MAX_STEERING
 
-
 func steer_left():
 	steer(STEER_AMOUNT)
 
@@ -40,6 +41,9 @@ func reset_data(delta): # needed if player stops control
 	engine_force = 0
 	steering = lerp(steering, 0.0, 10.0 * delta) # slowly resets steering
 	brake = 0
+
+func get_player():
+	return player
 
 func _process(_delta: float):
 	#print("Acceleration:", engine_force)

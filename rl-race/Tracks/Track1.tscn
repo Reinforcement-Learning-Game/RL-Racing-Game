@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmikf4j70nflp"]
+[gd_scene load_steps=3 format=3 uid="uid://dmikf4j70nflp"]
 
 [sub_resource type="Curve3D" id="Curve3D_7u12j"]
 closed = true
@@ -8,6 +8,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7u12j"]
+size = Vector3(2.1733398, 2.1707764, 7.6240234)
 
 [node name="Node3D" type="Node3D"]
 
@@ -43,3 +46,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4906435, 5.5737495, -0.5028
 
 [node name="SpawnPoint" type="Node3D" parent="." groups=["Player_Spawn"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9514675, 3.2655168, -21.657)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1804543, -27.13124)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5866699, -2.7385612, 5.358532)
+shape = SubResource("BoxShape3D_7u12j")
