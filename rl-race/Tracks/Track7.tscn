@@ -14,7 +14,7 @@ point_count = 9
 curve = SubResource("Curve3D_547gb")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="Track"]
-polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 6, 0)
+polygon = PackedVector2Array(0, 0, 0, 1, 1, 1, 6.5, 0)
 mode = 2
 path_node = NodePath("..")
 path_interval_type = 0

@@ -7,7 +7,8 @@ var track_names_to_paths = {
 	"Track Three": "Track3",
 	"Track Four": "Track4",
 	"Track Five": "Track5",
-	"Track Six": "Track6"
+	"Track Six": "Track6",
+	"Track Seven": "Track7"
 }
 
 enum GameState {
