@@ -37,7 +37,9 @@ func add_agents_to_track(num_agents: int, has_player: bool):
 		track.add_child(agent)
 
 	if has_player:
+		var player_spawn: Node3D = get_tree().get_nodes_in_group("Player_Spawn")[0]
 		player = Player.new()
+		player.get_vehicle().position = player_spawn.position
 		track.add_child(player)
 
 	game_state = GameState.IN_PROGRESS
