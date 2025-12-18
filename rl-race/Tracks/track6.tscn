@@ -35,3 +35,6 @@ light_indirect_energy = 3.286
 light_volumetric_fog_energy = 4.727
 shadow_enabled = true
 shadow_opacity = 0.55
+
+[node name="SpawnPoint" type="Node3D" parent="." groups=["Player_Spawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9514675, 3.2655168, -21.657)

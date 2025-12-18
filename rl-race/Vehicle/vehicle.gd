@@ -9,10 +9,12 @@ class_name Vehicle
 @export var MAX_VELOCITY = 60
 @export var MAX_STEERING = PI/6 # in radians
 
-@export var player: Player
+@export var agent: Agent
 
-func _ready() -> void:
+func with_data(ownedBy: Agent) -> void:
+	agent = ownedBy
 	mass = MASS
+	self.add_to_group("Vehicle")
 
 func accelerate():
 	# might not be needed if friction-force increases as velocity does
@@ -37,13 +39,13 @@ func steer_right():
 func apply_brake():
 	brake = BRAKE_FORCE
 
-func reset_data(delta): # needed if player stops control
+func reset_data(delta): # needed if agent stops control
 	engine_force = 0
 	steering = lerp(steering, 0.0, 10.0 * delta) # slowly resets steering
 	brake = 0
 
-func get_player():
-	return player
+func get_agent():
+	return agent
 
 func _process(_delta: float):
 	#print("Acceleration:", engine_force)

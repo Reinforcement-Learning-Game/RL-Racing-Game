@@ -29,28 +29,32 @@ func set_track(track_name):
 	# get all with group "vehicle_spawn"
 	# set each 
 
-func add_agents_to_track(num_agents: int, has_player: bool):
+func add_agents_to_track(num_ai_agents: int, has_player: bool):
 	var track = get_tree().current_scene
 
-	for i in range(num_agents):
-		var agent = AiAgent.new()
-		track.add_child(agent)
+	var agent_spawns = get_tree().get_nodes_in_group("Agent_Spawn") as Array[Node3D] 
 
 	if has_player:
-		var player_spawn: Node3D = get_tree().get_nodes_in_group("Player_Spawn")[0]
+		var player_spawn = agent_spawns[0]
 		player = Player.new()
 		player.get_vehicle().position = player_spawn.position
 		track.add_child(player)
 
+	for i in range(1, num_ai_agents):
+		var agent_spawn = agent_spawns[i]
+		var agent = AIAgent.new()
+		agent.get_vehicle().position = agent_spawn.position
+		track.add_child(agent)
+
 	game_state = GameState.IN_PROGRESS
 
-func start_game(track_name: String, num_agents: int, has_player: bool):
+func start_game(track_name: String, num_ai_agents: int, has_player: bool):
 	set_track(track_name)
 	await get_tree().create_timer(1).timeout
-	add_agents_to_track(num_agents, has_player)
+	add_agents_to_track(num_ai_agents, has_player)
 
 func increment_laps(player: Player):
-	pass
+	print("Laps incremented")
 
 
 	

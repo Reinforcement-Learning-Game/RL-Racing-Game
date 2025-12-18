@@ -42,3 +42,6 @@ path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+
+[node name="SpawnPoint" type="Node3D" parent="." groups=["Player_Spawn"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9514675, 3.2655168, -21.657)

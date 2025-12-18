@@ -1,23 +1,21 @@
-extends Node # This script is attached to a node
+extends Agent # This script is attached to a node
 class_name Player # Gives the script a global name in godot
 
-var vehicle: Vehicle # Creates a variable named vehicle
 var camera_pivot: Node3D
 var camera3d: Camera3D
 
 var follow_speed := 5.0
 var rotation_speed := 5.0
 
+var last_dir: Vector3
+var camera_offset = Vector3(0, 1, -4)
+
 func _init():
 	# Loading the vehicle scene
-	var vehicle_scene := load("res://Vehicle/Vehicle.tscn")
-	vehicle = vehicle_scene.instantiate() # Creating an actual instance of the vehicle scene
 	#Will create all of it's nodes
 	# Runs the _init function
 	# Prepares it to enter the scene
 	# Vehicle is now a REAL NODE
-	vehicle.player = self
-	add_child(vehicle)
 
 	camera_pivot = Node3D.new()
 	vehicle.add_child(camera_pivot)
@@ -38,9 +36,8 @@ func _process(delta: float) -> void:
 		return
 
 	# Smooth position follow
-
 	camera_pivot.global_position = camera_pivot.global_position.lerp(
-		vehicle.to_global(Vector3(0, 1, 4)),
+		vehicle.to_global(camera_offset),
 		follow_speed * delta
 	)
 
@@ -67,6 +64,3 @@ func _physics_process(delta: float):
 		vehicle.steer_right()
 	if (Input.is_action_pressed("Brake")):
 		vehicle.apply_brake()
-
-func get_vehicle():
-	return vehicle
