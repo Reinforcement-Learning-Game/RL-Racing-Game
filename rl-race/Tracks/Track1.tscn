@@ -1,5 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmikf4j70nflp"]
 
+[ext_resource type="PackedScene" uid="uid://bl3xdswpe6i3d" path="res://TrackAssets/SpawnPoint.tscn" id="1_irpak"]
+
 [sub_resource type="Curve3D" id="Curve3D_7u12j"]
 closed = true
 bake_interval = 0.02
@@ -9,10 +11,31 @@ _data = {
 }
 point_count = 8
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7u12j"]
-size = Vector3(2.1733398, 2.1707764, 7.6240234)
-
 [node name="Node3D" type="Node3D"]
+
+[node name="SpawnPoint" parent="." instance=ExtResource("1_irpak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6743174, 4.0764337, -21.916613)
+
+[node name="SpawnPoint2" parent="." instance=ExtResource("1_irpak")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.674, 4.076, -20.45828)
+
+[node name="SpawnPoint3" parent="." instance=ExtResource("1_irpak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.460967, 4.0764337, -19.475399)
+
+[node name="SpawnPoint4" parent="." instance=ExtResource("1_irpak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.460967, 4.0764337, -23.246357)
+
+[node name="SpawnPoint5" parent="." instance=ExtResource("1_irpak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.349682, 4.0764337, -20.294634)
+
+[node name="SpawnPoint6" parent="." instance=ExtResource("1_irpak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.349682, 4.0764337, -15.101292)
+
+[node name="SpawnPoint7" parent="." instance=ExtResource("1_irpak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.143217, 4.0764337, -15.101292)
+
+[node name="SpawnPoint8" parent="." instance=ExtResource("1_irpak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.143217, 4.0764337, -11.497219)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.11713212, -0.62014884, 0.7756905, -0.092595026, 0.7844842, 0.6131971, -0.9887904, 0, -0.149311, 0, 5.020524, 13.480082)
@@ -40,16 +63,3 @@ path_local = false
 path_continuous_u = true
 path_u_distance = 0.0
 path_joined = true
-
-[node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4906435, 5.5737495, -0.50287175)
-
-[node name="SpawnPoint" type="Node3D" parent="." groups=["Player_Spawn"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9514675, 3.2655168, -21.657)
-
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.1804543, -27.13124)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5866699, -2.7385612, 5.358532)
-shape = SubResource("BoxShape3D_7u12j")

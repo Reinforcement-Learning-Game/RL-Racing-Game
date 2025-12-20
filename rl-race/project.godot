@@ -21,8 +21,8 @@ GameManager="*res://game_manager.gd"
 
 [global_group]
 
-Player_Spawn=""
 Vehicle=""
+Agent_Spawn=""
 
 [input]
 

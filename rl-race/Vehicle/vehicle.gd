@@ -5,8 +5,9 @@ class_name Vehicle
 @export var BRAKE_FORCE = 270.0
 @export var STEER_AMOUNT = PI/128
 
-@export var MASS = 600.0 # 900.0
-@export var MAX_VELOCITY = 60
+@export var MASS = 240.0 #600.0 # 900.0
+@export var MAX_RPM = 450 #600
+@export var MAX_TORQUE = 350 #455
 @export var MAX_STEERING = PI/6 # in radians
 
 @export var agent: Agent
@@ -17,12 +18,13 @@ func with_data(ownedBy: Agent) -> void:
 	self.add_to_group("Vehicle")
 
 func accelerate():
-	# might not be needed if friction-force increases as velocity does
-	if (linear_velocity.length() >= MAX_VELOCITY):
-		engine_force = 0
-		return
+	var rpm_left = abs($back_left_tire.get_rpm())
+	var rpm_right = abs($back_right_tire.get_rpm())
+	var rpm = (rpm_left + rpm_right) / 2.0
 
-	engine_force = ENGINE_FORCE
+	var torque = MAX_TORQUE + (1.0 - rpm / MAX_RPM)
+
+	engine_force = torque#ENGINE_FORCE
 
 func steer(angle: float):
 	if (abs(steering + angle) <= MAX_STEERING):

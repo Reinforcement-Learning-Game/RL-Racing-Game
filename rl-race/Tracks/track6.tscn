@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://mxo0t1faruwr"]
+[gd_scene load_steps=3 format=3 uid="uid://mxo0t1faruwr"]
+
+[ext_resource type="PackedScene" uid="uid://bl3xdswpe6i3d" path="res://TrackAssets/SpawnPoint.tscn" id="1_os8rj"]
 
 [sub_resource type="Curve3D" id="Curve3D_u74x3"]
 closed = true
@@ -36,5 +38,4 @@ light_volumetric_fog_energy = 4.727
 shadow_enabled = true
 shadow_opacity = 0.55
 
-[node name="SpawnPoint" type="Node3D" parent="." groups=["Player_Spawn"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9514675, 3.2655168, -21.657)
+[node name="SpawnPoint" parent="." instance=ExtResource("1_os8rj")]

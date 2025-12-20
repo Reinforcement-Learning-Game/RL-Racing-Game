@@ -8,7 +8,7 @@ var follow_speed := 5.0
 var rotation_speed := 5.0
 
 var last_dir: Vector3
-var camera_offset = Vector3(0, 1, -4)
+var camera_offset = Vector3(0, 1, 4)
 
 func _init():
 	# Loading the vehicle scene
@@ -16,10 +16,10 @@ func _init():
 	# Runs the _init function
 	# Prepares it to enter the scene
 	# Vehicle is now a REAL NODE
+	super._init()
 
 	camera_pivot = Node3D.new()
 	vehicle.add_child(camera_pivot)
-	camera_pivot.position = Vector3(0, 6, -10)
 
 	camera3d = Camera3D.new()
 	camera_pivot.add_child(camera3d)
