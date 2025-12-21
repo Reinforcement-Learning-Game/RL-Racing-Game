@@ -39,7 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.143217, 4.0764337, -11.497
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.11713212, -0.62014884, 0.7756905, -0.092595026, 0.7844842, 0.6131971, -0.9887904, 0, -0.149311, 0, 5.020524, 13.480082)
-light_color = Color(0.9914184, 0.94024223, 0.81242824, 1)
+light_color = Color(0.9710193, 0.9657149, 0.940385, 1)
 light_energy = 2.143
 light_indirect_energy = 3.286
 light_volumetric_fog_energy = 4.727

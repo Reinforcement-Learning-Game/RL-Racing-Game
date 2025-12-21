@@ -25,6 +25,7 @@ func _init():
 			raycast.collide_with_areas = false
 			raycast.target_position = vec
 			vehicle.add_child(raycast)
+			raycasts.append(raycast)
 
 func gather_input():
 	var distance_vec = []
@@ -46,8 +47,6 @@ func apply_output(vec: Array):
 
 func _physics_process(_delta: float):
 	var input = gather_input()
-	#if input[0]:
-	#	print(input[0])
 	var output = input_to_output()
 	apply_output(output)
 	pass
