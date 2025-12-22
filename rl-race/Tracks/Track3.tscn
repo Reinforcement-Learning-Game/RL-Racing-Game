@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bon860uwfnyov"]
+[gd_scene load_steps=4 format=3 uid="uid://bon860uwfnyov"]
 
 [ext_resource type="PackedScene" uid="uid://bl3xdswpe6i3d" path="res://TrackAssets/SpawnPoint.tscn" id="1_d4agm"]
+[ext_resource type="PackedScene" uid="uid://47fqox6l2jr0" path="res://TrackAssets/Check_point.tscn" id="2_aabfe"]
 
 [sub_resource type="Curve3D" id="Curve3D_s3336"]
 closed = true
@@ -46,3 +47,6 @@ path_u_distance = 1.0
 path_joined = false
 
 [node name="SpawnPoint" parent="." instance=ExtResource("1_d4agm")]
+
+[node name="Area3D" parent="." instance=ExtResource("2_aabfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1145144, 1, 1.4350986)

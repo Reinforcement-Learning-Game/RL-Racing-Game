@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://mxo0t1faruwr"]
+[gd_scene load_steps=4 format=3 uid="uid://mxo0t1faruwr"]
 
 [ext_resource type="PackedScene" uid="uid://bl3xdswpe6i3d" path="res://TrackAssets/SpawnPoint.tscn" id="1_os8rj"]
+[ext_resource type="PackedScene" uid="uid://47fqox6l2jr0" path="res://TrackAssets/Check_point.tscn" id="2_k2olk"]
 
 [sub_resource type="Curve3D" id="Curve3D_u74x3"]
 closed = true
@@ -39,3 +40,6 @@ shadow_enabled = true
 shadow_opacity = 0.55
 
 [node name="SpawnPoint" parent="." instance=ExtResource("1_os8rj")]
+
+[node name="Area3D" parent="." instance=ExtResource("2_k2olk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.44454)

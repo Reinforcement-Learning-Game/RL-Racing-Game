@@ -17,7 +17,8 @@ enum GameState {
 	ENDED
 }
 var game_state = GameState.SETTING_UP
-var agents #: Agent[]
+@export
+var agents : Array[Agent] = []
 var player: Player
 
 var parent_dir = "res://Tracks/"
@@ -39,12 +40,14 @@ func add_agents_to_track(num_ai_agents: int, has_player: bool):
 		player = Player.new()
 		player.get_vehicle().position = player_spawn.position
 		track.add_child(player)
+		agents.append(player)
 
 	for i in range(1, num_ai_agents):
 		var agent_spawn = agent_spawns[i]
 		var agent = AIAgent.new()
 		agent.get_vehicle().position = agent_spawn.position
 		track.add_child(agent)
+		agents.append(agent)
 
 	game_state = GameState.IN_PROGRESS
 
@@ -53,7 +56,7 @@ func start_game(track_name: String, num_ai_agents: int, has_player: bool):
 	await get_tree().create_timer(1).timeout
 	add_agents_to_track(num_ai_agents, has_player)
 
-func increment_laps(player: Player):
+func increment_laps(agent: Agent):
 	print("Laps incremented")
 
 

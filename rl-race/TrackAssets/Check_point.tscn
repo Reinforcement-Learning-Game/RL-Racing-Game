@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://47fqox6l2jr0"]
+
+[ext_resource type="Script" uid="uid://b5hikk4tauwo2" path="res://Tracks/track.gd" id="1_iimwr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilicj"]
+size = Vector3(0.30958202, 1, 7.187256)
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_iimwr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.665289, 3.1247096, -21.108585)
+shape = SubResource("BoxShape3D_ilicj")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bunmmxt3tko1w"]
+[gd_scene load_steps=4 format=3 uid="uid://bunmmxt3tko1w"]
 
 [ext_resource type="PackedScene" uid="uid://bl3xdswpe6i3d" path="res://TrackAssets/SpawnPoint.tscn" id="1_mj2ve"]
+[ext_resource type="PackedScene" uid="uid://47fqox6l2jr0" path="res://TrackAssets/Check_point.tscn" id="2_5xv2r"]
 
 [sub_resource type="Curve3D" id="Curve3D_0hrwn"]
 closed = true
@@ -41,3 +42,6 @@ light_indirect_energy = 3.286
 light_volumetric_fog_energy = 4.727
 shadow_enabled = true
 shadow_opacity = 0.55
+
+[node name="Area3D" parent="." instance=ExtResource("2_5xv2r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.441643, 0, 14.972984)

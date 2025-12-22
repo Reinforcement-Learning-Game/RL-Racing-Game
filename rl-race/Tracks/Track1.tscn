@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmikf4j70nflp"]
+[gd_scene load_steps=5 format=3 uid="uid://dmikf4j70nflp"]
 
 [ext_resource type="PackedScene" uid="uid://bl3xdswpe6i3d" path="res://TrackAssets/SpawnPoint.tscn" id="1_irpak"]
+[ext_resource type="Script" uid="uid://b5hikk4tauwo2" path="res://Tracks/track.gd" id="2_0r4lv"]
 
 [sub_resource type="Curve3D" id="Curve3D_7u12j"]
 closed = true
@@ -11,10 +12,13 @@ _data = {
 }
 point_count = 8
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilicj"]
+size = Vector3(0.30958202, 1, 7.187256)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="SpawnPoint" parent="." instance=ExtResource("1_irpak")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6743174, 4.0764337, -21.916613)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.040029, 4.0764337, 21.317438)
 
 [node name="SpawnPoint2" parent="." instance=ExtResource("1_irpak")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.674, 4.076, -20.45828)
@@ -63,3 +67,10 @@ path_local = false
 path_continuous_u = true
 path_u_distance = 0.0
 path_joined = true
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("2_0r4lv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.665289, 3.1247096, -21.108585)
+shape = SubResource("BoxShape3D_ilicj")
